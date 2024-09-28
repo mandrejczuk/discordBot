@@ -10,7 +10,7 @@ pipeline {
         }
         stage('Run Bot') {
     steps {
-        sh 'java -jar target/discordbot.jar'
+        sh 'java -jar /var/jenkins_home/.m2/repository/mandrejczuk/dcbot/1.0-SNAPSHOT/dcbot-1.0-SNAPSHOT.jar'
     }
 }
     }
