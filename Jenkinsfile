@@ -8,10 +8,11 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
-        stage('Run Bot') {
-    steps {
-        sh 'java -jar /var/jenkins_home/.m2/repository/mandrejczuk/dcbot/1.0-SNAPSHOT/dcbot-1.0-SNAPSHOT.jar'
-    }
-}
+stage('Run Bot') {
+            steps {
+                // Upewnij się, że ścieżka jest poprawna do pliku w target/
+                sh 'java -jar target/dcbot-1.0-SNAPSHOT.jar'
+            }
+        }
     }
 }
