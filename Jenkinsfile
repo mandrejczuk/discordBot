@@ -8,5 +8,10 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
+        stage('Run Bot') {
+    steps {
+        sh 'java -jar target/discordbot.jar'
+    }
+}
     }
 }
