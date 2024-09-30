@@ -1,5 +1,7 @@
 package mandrejczuk.configuration;
 
+import mandrejczuk.Main;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -10,9 +12,11 @@ public final class Configuration {
     private final Properties properties = new Properties();
 
     private Configuration() {
-        try {
-            Path filePath = Path.of(System.getProperty("user.dir"), "src", "main", "resources", "config.properties");
-            properties.load(Files.newBufferedReader(filePath));
+        try (var is = Configuration.class.getResourceAsStream("/config.properties"))
+        {
+
+
+            properties.load(is);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
