@@ -7,9 +7,6 @@ import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 import net.dv8tion.jda.api.utils.cache.CacheFlag;
 
-import java.io.IOException;
-import java.nio.file.Path;
-
 
 public class Main {
     public static void main(String  [] args) {
